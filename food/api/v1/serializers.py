@@ -9,10 +9,10 @@ class FoodSerializer(serializers.ModelSerializer):
         food = Food.objects.create(
             user_id=self.context.get('user_id'),
             title=validated_data['title'],
-            description=validated_data['description']
+            body=validated_data['body']
         )
         return food
 
     class Meta:
         model = Food
-        fields = ['user_id', 'id', 'title', 'description']
+        fields = ['user_id', 'id', 'title', 'body']
