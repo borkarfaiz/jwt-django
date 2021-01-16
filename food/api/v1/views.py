@@ -18,7 +18,10 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = FoodSerializer
 
     def list(self, request):
-        queryset = Food.objects.filter(user=self.request.user)
+        if self.request.user.is_superuser:
+            queryset = Food.objects.all()
+        else:
+            queryset = Food.objects.filter(user=self.request.user)
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
 
