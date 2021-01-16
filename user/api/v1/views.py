@@ -2,9 +2,9 @@ from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import SignUpSerializer
-from rest_framework_simplejwt.authentication import JWTAuthentication, JWTTokenUserAuthentication
 
 from django.contrib.auth.models import User
+
 
 class SignUpAPIView(generics.GenericAPIView):
     serializer_class = SignUpSerializer
