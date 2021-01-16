@@ -2,7 +2,7 @@ from django.urls import path
 
 from rest_framework_simplejwt import views as jwt_views
 
-from .views import SignUpAPIView, ListUsers
+from .views import SignUpAPIView
 
 urlpatterns = [
     path(
@@ -18,10 +18,4 @@ urlpatterns = [
         'token/refresh/',
         jwt_views.TokenRefreshView.as_view(),
         name='token_refresh'),
-    path(
-        'users/',
-        ListUsers.as_view(),
-        name='list_users',
-    )
-
 ]

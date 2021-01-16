@@ -3,8 +3,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import SignUpSerializer
 
-from django.contrib.auth.models import User
-
 
 class SignUpAPIView(generics.GenericAPIView):
     serializer_class = SignUpSerializer
@@ -18,16 +16,3 @@ class SignUpAPIView(generics.GenericAPIView):
             message,
             status=status.HTTP_201_CREATED
         )
-
-from rest_framework.views import APIView
-
-from rest_framework.permissions import IsAuthenticated
-
-class ListUsers(APIView):
-    permission_classes = (IsAuthenticated,)
-    def get(self, request, format=None):
-        """
-        Return a list of all users.
-        """
-        usernames = [user.username for user in User.objects.all()]
-        return Response(usernames)

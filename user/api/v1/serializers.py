@@ -20,10 +20,3 @@ class SignUpSerializer(serializers.ModelSerializer):
         )
         return user
 
-
-class UserSerializer(serializers.ModelSerializer):
-    permission_classes = (IsAuthenticated,)
-
-    class Meta:
-        model = User
-        fields = '__all__'
