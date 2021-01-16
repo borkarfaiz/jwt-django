@@ -5,7 +5,7 @@ It is a food app which lets users to create, read and update their food posts.
 
 ## User App
 - user can register using API as well login as check the postman collection for more details.
-- Admin can access all the data using list api Admin Credentials username: admin, password: admin.
+- Admin can access all food posts through list api, Admin Credentials username: admin, password: admin.
 
 
 ## FoodApp
